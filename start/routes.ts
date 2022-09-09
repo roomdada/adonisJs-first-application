@@ -20,6 +20,5 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
-Route.get('/', async ({ view }) => {
-  return view.render('welcome')
-})
+Route.get('/', 'TicketsController.index').as('home.path');
+Route.get('/tickets/:id', 'TicketsController.show').as('tickets.show');
